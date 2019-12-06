@@ -1,0 +1,8 @@
+eureka:
+  environment: develop
+  instance:
+    hostname: eureka-dev
+  # eureka 可以互相注册
+  # client:
+  #   serviceUrl:
+  #     defaultZone: http://eureka-prd2:${server.port}/eureka/

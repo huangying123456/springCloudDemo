@@ -1,0 +1,36 @@
+euraka:
+  server:
+    ConnectTimeoutSeconds: 10
+    ReadTimeoutSeconds: 10
+  registry:
+    FetchIntervalSeconds: 45
+  instance:
+    preferIpAddress: true
+    leaseRenewalIntervalInSeconds: 1
+
+ribbon:
+  ConnectTimeout: 300000
+  ReadTimeout: 300000
+
+zuul:
+  host:
+    connect-timeout-millis: 10000
+    socket-timeout-millis: 60000
+
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+
+flyway:
+  locations: db/migration
+  baseline-on-migrate: true
+
+feign.okhttp.enabled: true
+
+
