@@ -3,7 +3,7 @@ server:
 
 eureka:
   # eureka-dev 代表 eureka 服务的host,如果本地可以在/etc/hosts 文件中配置具体的ip,
-  client.serviceUrl.defaultZone: http://eureka-dev:1111/eureka/
+  client.serviceUrl.defaultZone: http://eureka-develop:1111/eureka/
   instance:
     preferIpAddress: true
     leaseRenewalIntervalInSeconds: 3

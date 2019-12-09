@@ -2,7 +2,7 @@ server:
   env: "production"
 
 eureka:
-  client.serviceUrl.defaultZone: http://eureka-prd:1111/eureka/
+  client.serviceUrl.defaultZone: http://eureka-production:1111/eureka/
   instance:
     preferIpAddress: true
     leaseRenewalIntervalInSeconds: 3
