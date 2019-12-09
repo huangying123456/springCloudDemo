@@ -1,0 +1,42 @@
+group = "com.config"
+version = "1.0.0"
+
+repositories {
+    maven { url "http://maven.aliyun.com/nexus/content/groups/public" }
+    jcenter()
+    mavenLocal()
+}
+
+buildscript {
+    ext {
+        springBootVersion = '1.5.2.RELEASE'
+    }
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+        classpath "io.spring.gradle:dependency-management-plugin:0.6.1.RELEASE"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Dalston.SR1'
+    }
+}
+
+dependencies {
+    compile group: "org.springframework.boot", name: "spring-boot-starter-web", version: "${springBootVersion}"
+    compile group: "org.springframework.boot", name: "spring-boot-starter-security", version: "${springBootVersion}"
+    compile group: "org.springframework.cloud", name: "spring-cloud-config-server"
+}
+
